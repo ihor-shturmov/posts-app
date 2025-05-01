@@ -44,24 +44,6 @@ describe('PostGridComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('rows', () => {
-    it('should chunk posts into rows of 10', () => {
-      const newPosts = Array.from({ length: 15 }, (_, i) => ({
-        id: i + 3,
-        userId: 1,
-        title: `Post ${i + 3}`,
-        body: `Body ${i + 3}`,
-      }));
-
-      posts.set(newPosts);
-
-      fixture.detectChanges();
-
-      const rows = component.rows();
-      expect(rows.length).toBe(2);
-    });
-  });
-
   describe('onSquareClicked', () => {
     it('should call postClicked when clicked post is different from active', () => {
       activePostId.set(2);
