@@ -1,59 +1,68 @@
-# PostsGridApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+# Angular Assignment: Posts App
 
-## Development server
+This project was developed as part of a coding assignment to demonstrate Angular, NgRx SignalStore, testing, and best practices.
 
-To start a local development server, run:
+## 🚀 Tech stack
 
-```bash
-ng serve
-```
+- **Angular 19**
+- **NgRx SignalStore**
+- **Angular Material (CDK)**
+- **RxJS**
+- **Jasmine/Karma** (unit testing)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🏗️ Project structure
 
-## Code scaffolding
+Key layers:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `PostsStore` → state management using NgRx SignalStore
+- `PostsFacade` → exposes state + actions to components
+- `PostGridComponent` → displays posts as a 10x10 grid
+- `PostSquareComponent` → displays individual post
+- `postsResolver` → fetches posts before navigation
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🎯 Focus areas
 
-```bash
-ng generate --help
-```
+We prioritized:
 
-## Building
+✅ Angular’s latest features (signals, standalone components)  
+✅ Following official docs and recommendations  
+✅ Simplicity over overengineering  
+✅ Readability and maintainability of code and tests
 
-To build the project run:
+---
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🚀 To run the project
 
 ```bash
-ng test
+npm ci && npm run start
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 💯 Test coverage
+
+Tests cover:
+
+- State updates in `PostsStore`
+- Facade delegation in `PostsFacade`
+- Component logic in `PostGridComponent`
+- Resolver behavior in `postsResolver`
+- HTTP requests in `PostsService`
+
+A coverage report can be generated via:
 
 ```bash
-ng e2e
+ng test --code-coverage
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Coverage reports can be found in `/coverage/` folder after running.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🙏 Thank you
+
+Thank you for reviewing this assignment!  
+Feel free to reach out with questions or feedback.
