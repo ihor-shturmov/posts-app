@@ -1,6 +1,6 @@
 import { signalStore, withState, withMethods, patchState, withProps } from '@ngrx/signals';
 import { Posts } from '../models/post.model';
-import { inject } from '@angular/core';
+import { inject, Signal } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap, tap } from 'rxjs';
@@ -13,6 +13,17 @@ export interface PostsState {
   isLoading: boolean;
   activePostId: number | null;
   activePropertyIndex: number;
+}
+
+export interface PostsStoreInstance {
+  posts: Signal<Posts>;
+  isLoading: Signal<boolean>;
+  activePostId: Signal<number | null>;
+  activePropertyIndex: Signal<number>;
+  setActivePost(id: number): void;
+  nextProperty(): void;
+  resetActivePost(): void;
+  loadPosts(): void;
 }
 
 export const PostsStore = signalStore(
@@ -44,8 +55,8 @@ export const PostsStore = signalStore(
         switchMap(() => {
           return postsService.fetchPosts().pipe(
             tapResponse({
-              next: (posts) => patchState(store, { posts }),
-              error: (error: HttpErrorResponse) => snackbar.open('Error loading posts: ' + error?.message),
+              next: (posts) => patchState(store, { posts: posts ?? [] }),
+              error: (error: HttpErrorResponse) => snackbar.open('Error loading posts: ' + error?.message, undefined, { duration: 5000 }),
               finalize: () => patchState(store, { isLoading: false }),
             })
           );

@@ -10,11 +10,11 @@ describe('PostSquareComponent', () => {
     await TestBed.configureTestingModule({
       imports: [PostSquareComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PostSquareComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.componentRef.setInput('post', {})
   });
 
   it('should create', () => {
