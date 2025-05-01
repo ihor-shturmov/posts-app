@@ -1,0 +1,16 @@
+.viewport {
+  height: 1200px; // or dynamic based on rows
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.square {
+  height: 100px;
+}

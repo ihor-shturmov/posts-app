@@ -1,0 +1,14 @@
+<cdk-virtual-scroll-viewport itemSize="60" class="viewport">
+  @for (row of rows(); track $index) {
+    <div class="row">
+      @for (post of row; track post.id) {
+        <app-post-square
+          [post]="post"
+          [isActive]="post.id === facade.activePostId()"
+          [activePropertyIndex]="facade.activePropertyIndex()"
+          (squareClicked)="facade.postClicked($event)"
+        />
+      }
+    </div>
+  }
+</cdk-virtual-scroll-viewport>
