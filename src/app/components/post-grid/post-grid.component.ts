@@ -18,6 +18,14 @@ export class PostGridComponent {
 
   rows: Signal<Posts[]> = computed(() => this.chunk(this.facade.posts(), 10));
 
+  onSquareClicked(postId: number): void {
+    if (this.facade.activePostId() !== postId) {
+      this.facade.postClicked(postId);
+    } else {
+      this.facade.changeProperty();
+    }
+  }
+
   private chunk(arr: Posts, size: number): Posts[] {
     const result: Posts[] = [];
     for (let i = 0; i < arr.length; i += size) {

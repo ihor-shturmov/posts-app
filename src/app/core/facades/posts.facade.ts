@@ -17,4 +17,8 @@ export class PostsFacade {
   postClicked(id: number): void {
     this.store.setActivePost(id);
   }
+
+  changeProperty(): void {
+    this.store.nextProperty();
+  }
 }
