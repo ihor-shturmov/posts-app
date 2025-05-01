@@ -2,14 +2,11 @@ import { Component, computed, inject, Signal } from '@angular/core';
 import { PostsFacade } from '../../core/facades/posts.facade';
 import { Posts } from '../../core/models/post.model';
 import { PostSquareComponent } from '../post-square/post-square.component';
-import { CdkFixedSizeVirtualScroll, ScrollingModule } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-post-grid',
   imports: [
-    CdkFixedSizeVirtualScroll,
     PostSquareComponent,
-    ScrollingModule
   ],
   templateUrl: './post-grid.component.html',
   styleUrl: './post-grid.component.scss'

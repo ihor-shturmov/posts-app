@@ -31,6 +31,7 @@ We prioritized:
 ✅ Following official docs and recommendations  
 ✅ Simplicity over overengineering  
 ✅ Readability and maintainability of code and tests
+✅ Also I tried to implement virtual scroll for the possibility of scalling, in case if we will have millions of posts but material CDK has limitation with column setup and I didn't want to waste more time figuring that out
 
 ---
 

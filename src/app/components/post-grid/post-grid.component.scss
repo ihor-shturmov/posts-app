@@ -1,12 +1,10 @@
-.viewport {
-  width: 100%;
-  border: 1px solid #ccc;
-}
-
 .row {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
+
+  margin-top: 10px;
 }
 
 .square {
